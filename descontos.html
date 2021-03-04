@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Descontos</title>
+</head>
+<body>
+    <h1>Desconto</h1>
+    <hr>
+    <p class="des">
+    <script>
+        let n1 = prompt("Digite o valor")
+        let n2 = prompt("Digite o desconto")
+            
+            let desconto = parseFloat(n2)/100
+            let valor1= (desconto)*(n1)
+            let valorfinal=(n1)-(valor1)
+         document.write(`O valor do produto é: R$ ${n1}<br>` + `O desconto é de: ${n2}% <br>` + `Valor á pagar: ${valorfinal.toFixed(3)}` )
+           
+    </script>
+    </p> 
+</body>
+</html>
