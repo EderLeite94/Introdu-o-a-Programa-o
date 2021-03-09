@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHASKARA</title>
+</head>
+<body>
+    <h1>CALCULADORA DE BHASKARA</h1>
+<form id="form">
+    <input id="value1" type="number" placeholder="Digite o valor de A:"><br>
+    <input id="value2" type="number" placeholder="Digite o valor de B:"><br>
+    <input id="value3" type="number" placeholder="Digite o valor de C:"><br>
+    <button>Calcular</button>
+</form>
+    <div  id="result"></div>
+    <script>
+        function onSubmit(event){
+            event.preventDefault()
+
+            let a = parseFloat(value1.value)
+            let b = parseFloat(value2.value)
+            let c = parseFloat(value3.value)
+                
+            if (isNaN(a)) {
+                    result.innerHTML = 'Por favor, informe um valor válido'
+                    return
+                }
+                if (isNaN(b)) {
+                    result.innerHTML = 'Por favor, informe um valor válido'
+                    return
+                }
+                if (isNaN(c)){
+                    result.innerHTML ='Por favor, informe um valor válido'
+                    return
+                }
+
+        let delta = b * b - 4 * a * c // Calcula o Delta
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a) // Calcula a primeira raiz
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a) // Calcula a segunda raiz
+
+
+        result.innerHTML =`
+            <ul>
+                <li> Entradas: <b>${a}</b>, <b>${b}</b> e <b>${c}</b>.</li>
+                <li>X1: <b>${x1}</b>.</li>
+                <li>x2: <b> ${x2}</b>.</li>
+         </ul>        
+        `}
+        form.addEventListener('submit',onSubmit)
+    </script>
+</body>
+</html>

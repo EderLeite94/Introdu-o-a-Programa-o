@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução a Programação</title>
+</head>
+<body>
+    <h1>Exemplo</h1>
+    <p>Calcula o valor com desconto a partir do preço e do percentual de desconto</p>
+
+    <form id="form">
+        <input id="field1" type="number" placeholder="Preço base do produto"><br>
+        <input id="field2" type="number" placeholder="Percentual de desconto"><br>
+        <button>Calcular</button>
+    </form>
+    <div  id="result"></div>
+    <script>
+            function onSubmit(event){ 
+                    event.preventDefault()
+
+                let n1 = parseFloat(field1.value)
+                let n2 = parseFloat(field2.value)
+                    
+                if (isNaN(n1)) {
+                    result.innerHTML = 'Por favor, informe um preço válido'
+                    return
+                }
+                if (isNaN(n2)) {
+                    result.innerHTML = 'Por favor, informe percentual de desconto válido'
+                    return
+                }
+               
+            let desconto = parseFloat(n2)/100
+            let valor1= (desconto)*(n1)
+            let valorfinal=(n1)-(valor1)
+          result.innerHTML =`
+                    <ul>
+        O valor do produto é: R$ ${n1}<br>` + `O desconto é de: ${n2}% <br>` + `Valor á pagar: ${valorfinal.toFixed(2)}
+        </ul>
+        `
+            }
+            form.addEventListener('submit',onSubmit)
+    </script>
+    
+</body>
+</html>
