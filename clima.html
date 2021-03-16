@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+    
+</head>
+<body>
+      
+    <h1>Clima</h1>
+    <hr>
+    <form id="form">
+        <select id="weather">
+            <option value="1">Escolha o clima</option>
+            <option value="sunny">Ensolarado</option>
+            <option value="rainy">Chuvoso</option>
+            <option value="snowing">Nevando</option>
+            <option value="overcast">Nublado</option>
+        </select>
+        <button>Ok</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function onSubmit(event){
+            event.preventDefault()
+
+        let clima = weather.value;
+       
+            
+        if(clima === 'sunny' ) {
+                result.innerHTML='Hoje está bom e ensolarado lá fora. Use shorts! Vá à praia ou ao parque e tome um sorvete.'
+                return
+            }
+        if(clima === 'rainy' ) {
+                result.innerHTML='A chuva está caindo lá fora; leve uma capa de chuva e um guarda-chuva, e não fique fora por muito tempo.'
+                return
+            }
+        if(clima === 'snowing' ) {
+                result.innerHTML='A neve está caindo - está congelando! Melhor ficar em casa com uma xícara de chocolate quente ou construir um boneco de neve.'
+                return
+            }  
+        if(clima === 'overcast' ) {
+                result.innerHTML='Não está chovendo, mas o céu está cinza e sombrio; pode girar a qualquer minuto, então leve uma capa de chuva para o caso.'
+                return
+            }
+        if(clima === '1') {
+                result.innerHTML='Escolha um clima valido!'
+                return
+            }
+        }
+        form.addEventListener('submit',onSubmit)
+    </script>
+ 
+</body>
+</html>

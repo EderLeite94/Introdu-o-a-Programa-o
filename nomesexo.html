@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome e Sexo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Informe seu nome e sexo.</h1>
+    <hr>
+    <form id="form">
+        <input id="n" type="text" placeholder="Digite seu nome"><br>
+        <select id="sex">
+            <option value="1">Escolha seu genero</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select>
+        <button>OK</button>
+    </form>
+        <div id= "result"></div>
+        <script>
+        function onSubmit(event){
+        event.preventDefault()
+        
+        let name = n.value;
+        let gen = sex.value;
+        
+        if(gen === '1'){
+            result.innerHTML=`Preencha todos os campos!`
+        }
+        if(isNaN(name)){
+            result.innerHTML=`Preencha todos os campos!`
+        }
+        if (gen === 'masculino'){
+        result.innerHTML= `Seja Bem-Vindo: ${name} ao curso de S.I da Fatec Taquaritinga<br> O genero escolhido é: <div class="m">${gen}</div>`
+        return
+        } 
+        if (gen === 'feminino'){
+        result.innerHTML=`Seja Bem-Vinda: ${name}ao curso de S.I da Fatec Taquaritinga<br> O genero escolhido é <div class="f">${gen}</div>`
+        return
+        }
+        
+    }
+        form.addEventListener('submit',onSubmit)    
+    </script>
+</body>
+</html>
