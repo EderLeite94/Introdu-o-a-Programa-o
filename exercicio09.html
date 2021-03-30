@@ -46,18 +46,7 @@
       }
 
       result.innerHTML = ''
-
-      // Dá para fazer com while, se estiver com tempo sobrando...
-      /*
-      let i = n1
-      while (i < n2) {
-        result.innerHTML += `${i}, `
-        i++
-      }
-      */
-
-      // Dá para fazer com for e fica bem enxuto.
-     
+      
       for (let i = n2; i > n1; --i) {
         result.innerHTML += `${i}, `
       }
