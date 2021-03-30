@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="base.css">
+  <title>Introdução à Programação - Exemplo 05</title>
+</head>
+<body>
+  <h1>Exercicio</h1>
+  <p>Tabuada</p>
+
+  <form id="form" novalidate>
+    <input id="field1" type="number" placeholder="Informe um numero">
+
+   
+
+    <button>Exibir</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function onSubmit(event) {
+      event.preventDefault()
+
+      let n1 = parseFloat(field1.value)
+      
+
+      tabuada = ''
+
+    
+      for (let i = 1; i <=10; i++) {
+       tabuada += n1+ "X" +i+ "=" +
+                n1*i+"<br/>";
+      }
+      
+      result.innerHTML = tabuada;
+    }
+
+    form.addEventListener('submit', onSubmit)
+  </script>
+</body>
+</html>
